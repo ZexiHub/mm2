@@ -763,8 +763,8 @@ local Toggle = Tabs.AimbotTab:Toggle({
 
 -- AUTOFARM TAB
 Tabs.AutoFarm:Section({ 
-    Title = gradient("Coins Collection", Color3.fromHex("#ff8c00"), Color3.fromHex("#ff4500")),
-    Icon = "candy" 
+    Title = gradient("Coins Collection", Color3.fromHex("#001e80"), Color3.fromHex("#16f2d9")),  -- Dégradé bleu foncé → bleu clair
+    Icon = "tree"  -- Icône sapin de Noël
 })
 
 local AutoFarmConfig = {
@@ -945,7 +945,7 @@ local function flingMurderer()
 end
 
 Tabs.AutoFarm:Toggle({
-    Title = gradient("Xmas Autofarm", Color3.fromHex("#ff8c00"), Color3.fromHex("#ff4500")),
+    Title = gradient("Xmas Autofarm", Color3.fromHex("#001e80"), Color3.fromHex("#16f2d9")),  -- Dégradé bleu
     Default = false,
     Desc = "Automatically collect Xmas coins for event rewards",
     Callback = function(state)
@@ -1000,7 +1000,6 @@ RunService.Heartbeat:Connect(function()
         end
     end
 end)
-
 -- INNOCENT TAB
 do
 	local gunDropESPEnabled = true
