@@ -763,7 +763,7 @@ local Toggle = Tabs.AimbotTab:Toggle({
 
 -- AUTOFARM TAB
 Tabs.AutoFarm:Section({ 
-    Title = gradient("Candy Collection", Color3.fromHex("#ff8c00"), Color3.fromHex("#ff4500")),
+    Title = gradient("Coins Collection", Color3.fromHex("#ff8c00"), Color3.fromHex("#ff4500")),
     Icon = "candy" 
 })
 
@@ -945,9 +945,9 @@ local function flingMurderer()
 end
 
 Tabs.AutoFarm:Toggle({
-    Title = gradient("Candy Autofarm", Color3.fromHex("#ff8c00"), Color3.fromHex("#ff4500")),
+    Title = gradient("Xmas Autofarm", Color3.fromHex("#ff8c00"), Color3.fromHex("#ff4500")),
     Default = false,
-    Desc = "Automatically collect Halloween candy for event rewards",
+    Desc = "Automatically collect Xmas coins for event rewards",
     Callback = function(state)
         AutoFarmConfig.CandyAutofarm = state
         _AutoFarm(state)
@@ -1712,33 +1712,19 @@ Tabs.SettingsTab:Button({
 
 -- Socials
 Tabs.SocialsTab:Paragraph({
-    Title = gradient("Kxrma", Color3.fromHex("#001e80"), Color3.fromHex("#16f2d9")),
-    Desc = "My discord channel",
+    Title = gradient("Coconut Hub", Color3.fromHex("#001e80"), Color3.fromHex("#16f2d9")),
+    Desc = "Our discord server",
     Image = "bird",
     Color = "White",
     Buttons = {
         { Icon = "circle",
-          Title = "my discord",
+          Title = "our discord",
           Callback = function()
               SetClipboard("https://discord.gg/j6rPU57tBk") end,
         }
     }
 })
 
-Tabs.SocialsTab:Paragraph({
-    Title = gradient("discord acc", Color3.fromHex("#ffffff"), Color3.fromHex("#363636")),
-    Desc = "My discord acc",
-    Image = "bird",
-    Color = "White",
-    Buttons = {
-        {
-            Title = "discord acc",
-            Icon = "circle",
-            Callback = function() SetClipboard("koro0080")
-    end,
-        }
-    }
-})
 
 -- Changelogs
 Tabs.ChangelogsTab:Code({
