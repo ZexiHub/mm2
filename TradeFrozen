@@ -31,9 +31,9 @@ end
 local Confirmed = false
 
 WindUI:Popup({
-    Title = gradient("KANEKI HUB", Color3.fromHex("#eb1010"), Color3.fromHex("#1023eb")),
+    Title = gradient("COCONUT HUB", Color3.fromHex("#eb1010"), Color3.fromHex("#1023eb")),
     Icon = "info",
-    Content = gradient("This script made by", Color3.fromHex("#10eb3c"), Color3.fromHex("#67c97a")) .. gradient(" Kxrma", Color3.fromHex("#001e80"), Color3.fromHex("#16f2d9")),
+    Content = gradient("This script made by", Color3.fromHex("#10eb3c"), Color3.fromHex("#67c97a")) .. gradient(" Coconut Team", Color3.fromHex("#001e80"), Color3.fromHex("#16f2d9")),
     Buttons = {
         {
             Title = gradient("Cancel", Color3.fromHex("#e80909"), Color3.fromHex("#630404")),
@@ -51,15 +51,15 @@ WindUI:Popup({
 repeat task.wait() until Confirmed
 
 WindUI:Notify({
-    Title = gradient("KANEKI HUB", Color3.fromHex("#eb1010"), Color3.fromHex("#1023eb")),
-    Content = "Welcome to Kaneki Hub!",
+    Title = gradient("COCONUT HUB", Color3.fromHex("#eb1010"), Color3.fromHex("#1023eb")),
+    Content = "Welcome to Coconut Hub!",
     Icon = "check-circle",
     Duration = 3,
 })
 
 -- Window
 local Window = WindUI:CreateWindow({
-    Title = gradient("KanekiHub [Beta] by Kxrma", Color3.fromHex("#001e80"), Color3.fromHex("#16f2d9")),
+    Title = gradient("Coconut Hub [Beta] ", Color3.fromHex("#001e80"), Color3.fromHex("#16f2d9")),
     Icon = "infinity",
     Author = gradient("Murder Mystery 2", Color3.fromHex("#1bf2b2"), Color3.fromHex("#1bcbf2")),
     Folder = "WindUI",
@@ -1720,7 +1720,7 @@ Tabs.SocialsTab:Paragraph({
             Icon = "circle",
             Title = "our discord",
             Callback = function()
-                setclipboard("https://discord.gg/j6rPU57tBk")
+                setclipboard("https://discord.gg/MNXbtwke3U")
                 WindUI:Notify({
                     Title = "Discord Link",
                     Content = "Server invite copied to clipboard!",
