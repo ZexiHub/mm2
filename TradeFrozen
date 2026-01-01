@@ -1,5 +1,3 @@
-
-
 -- WindUI
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
@@ -40,12 +38,12 @@ WindUI:Popup({
         {
             Title = gradient("Cancel", Color3.fromHex("#e80909"), Color3.fromHex("#630404")),
             Callback = function() end,
-            Variant = "Tertiary", -- Primary, Secondary, Tertiary
+            Variant = "Tertiary",
         },
         {
             Title = gradient("Load", Color3.fromHex("#90f09e"), Color3.fromHex("#13ed34")),
             Callback = function() Confirmed = true end,
-            Variant = "Secondary", -- Primary, Secondary, Tertiary
+            Variant = "Secondary",
         }
     }
 })
@@ -88,25 +86,24 @@ Window:EditOpenButton({
 
 -- Tabs
 local Tabs = {
-    MainTab = Window:Tab({ Title = gradient("DUPE WEAPONS", Color3.fromHex("#ffffff"), Color3.fromHex("#636363")), Icon = "terminal" }),
     CharacterTab = Window:Tab({ Title = gradient("CHARACTER", Color3.fromHex("#ffffff"), Color3.fromHex("#636363")), Icon = "file-cog" }),
     TeleportTab = Window:Tab({ Title = gradient("TELEPORT", Color3.fromHex("#ffffff"), Color3.fromHex("#636363")), Icon = "user" }),
     EspTab = Window:Tab({ Title = gradient("ESP", Color3.fromHex("#ffffff"), Color3.fromHex("#636363")), Icon = "eye" }),
     AimbotTab = Window:Tab({ Title = gradient("AIMBOT", Color3.fromHex("#ffffff"), Color3.fromHex("#636363")), Icon = "arrow-right" }),
     AutoFarm = Window:Tab({ Title = gradient("AUTOFARM", Color3.fromHex("#ffffff"), Color3.fromHex("#636363")), Icon = "sword"}),
     InnocentTab = Window:Tab({
-    Title = gradient("INNOCENT", Color3.fromHex("#0ff707"), Color3.fromHex("#1e690c")),
-    Icon = "circle"
-}),
-MurderTab = Window:Tab({
-    Title = gradient("MURDER", Color3.fromHex("#e80909"), Color3.fromHex("#630404")),
-    Icon = "circle"
-}),
-SheriffTab = Window:Tab({
-    Title = gradient("SHERIFF", Color3.fromHex("#001e80"), Color3.fromHex("#16f2d9")),
-    Icon = "circle"
-}),
-gh = Window:Divider(),
+        Title = gradient("INNOCENT", Color3.fromHex("#0ff707"), Color3.fromHex("#1e690c")),
+        Icon = "circle"
+    }),
+    MurderTab = Window:Tab({
+        Title = gradient("MURDER", Color3.fromHex("#e80909"), Color3.fromHex("#630404")),
+        Icon = "circle"
+    }),
+    SheriffTab = Window:Tab({
+        Title = gradient("SHERIFF", Color3.fromHex("#001e80"), Color3.fromHex("#16f2d9")),
+        Icon = "circle"
+    }),
+    gh = Window:Divider(),
     ServerTab = Window:Tab({ Title = gradient("SERVER", Color3.fromHex("#ffffff"), Color3.fromHex("#636363")), Icon = "atom", }),
     beed = Window:Divider(),
     SettingsTab = Window:Tab({ Title = gradient("SETTINGS", Color3.fromHex("#ffffff"), Color3.fromHex("#636363")), Icon = "code" }),
@@ -116,72 +113,7 @@ gh = Window:Divider(),
     WindowTab = Window:Tab({ Title = gradient("CONFIGURATION", Color3.fromHex("#ffffff"), Color3.fromHex("#636363")), Icon = "settings", Desc = "Manage window settings and file configurations." }),
     CreateThemeTab = Window:Tab({ Title = gradient("THEMES", Color3.fromHex("#ffffff"), Color3.fromHex("#636363")), Icon = "palette", Desc = "Design and apply custom themes." }),
 }
--- DUPE WEAPONS TAB (Premium Locked)
-Tabs.MainTab:Section({ Title = gradient("Weapon Duplication", Color3.fromHex("#ffcc00"), Color3.fromHex("#ff6600")) })
 
-Tabs.MainTab:Paragraph({
-    Title = gradient("Premium Feature Locked", Color3.fromHex("#ff3333"), Color3.fromHex("#990000")),
-    Desc = gradient("Unlock Weapon Duplication\nDuplicate any weapon instantly!\nMultiply your inventory value.", Color3.fromHex("#ffffff"), Color3.fromHex("#cccccc")),
-    Image = "lock",
-    Color = "Blue"
-})
-
-Tabs.MainTab:Button({
-    Title = gradient("Unlock with Robux - 199 R$", Color3.fromHex("#00ff00"), Color3.fromHex("#00cc00")),
-    Variant = "Primary",
-    Icon = "gem",
-    Callback = function()
-        WindUI:Notify({
-            Title = "Robux Purchase",
-            Content = "Wait...",
-            Icon = "shopping-cart",
-            Duration = 4
-        })
-        -- Simule l'achat (tu peux connecter Ãƒ  un vrai systÃƒÂ¨me plus tard)
-        task.wait(1)
-        setclipboard("https://www.roblox.com/games/104253700549488/SdkAz1s-Place") 
-            WindUI:Notify({
-            Title = "Pay 199 Robux for Access",
-            Content = "When you have payed Dm @Kxrmanana on discord",
-            Icon = "x-circle",
-            Duration = 3
-        })
-    end
-})
-
-Tabs.MainTab:Button({
-    Title = gradient("Unlock with Paypal -1$50", Color3.fromHex("#ff8800"), Color3.fromHex("#cc5500")),
-    Variant = "Secondary",
-    Icon = "bitcoin",
-    Callback = function()
-        WindUI:Notify({
-            Title = "Paypal Payment",
-            Content = "Wait..",
-            Icon = "external-link",
-            Duration = 4
-        })
-        task.wait(1)
-        -- Remplace par ton lien de paiement crypto
-        setclipboard("https://paypal.me/younesbarrija597")
-        WindUI:Notify({
-            Title = "Link copied in your clipboard",
-            Content = "When you payed dm @Kxrmanana on discord",
-            Icon = "check-circle",
-            Duration = 3
-        })
-    end
-})
-
-Tabs.MainTab:Paragraph({
-    Title = gradient("Premium Benefits:", Color3.fromHex("#00ffaa"), Color3.fromHex("#00aa77")),
-    Desc = 
-        "Duplicate any weapon\n"..
-        "Bulk inventory duplication\n"..
-        "No detection risk\n"..
-        "Instant processing",
-    Image = "star",
-    Color = "Green"
-})
 -- Character
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
@@ -204,6 +136,7 @@ local function updateCharacter()
         end
     end
 end
+
 Tabs.CharacterTab:Section({Title = gradient("Walkspeed", Color3.fromHex("#ff0000"), Color3.fromHex("#300000"))})
 
 Tabs.CharacterTab:Slider({
@@ -242,7 +175,6 @@ Tabs.CharacterTab:Slider({
         updateCharacter()
     end
 })
-
 
 Tabs.CharacterTab:Button({
     Title = "Reset jumppower",
@@ -391,28 +323,24 @@ Tabs.EspTab:Toggle({
 local gunDropESPEnabled = false
 local gunDropHighlight = nil
 
--- ÃÂ¡ÃÂ¿ÃÂ¸Ã‘ÂÃÂ¾ÃÂº ÃÂ²Ã‘ÂÃÂµÃ‘â€¦ ÃÂ²ÃÂ¾ÃÂ·ÃÂ¼ÃÂ¾ÃÂ¶ÃÂ½Ã‘â€¹Ã‘â€¦ ÃÂºÃÂ°Ã‘â‚¬Ã‘â€š
 local mapPaths = {
     "ResearchFacility", "Hospital3", "MilBase", "House2", 
     "Workplace", "Mansion2", "BioLab", "Hotel", 
     "Factory", "Bank2", "PoliceStation"
 }
 
--- ÃÂ¤Ã‘Æ’ÃÂ½ÃÂºÃ‘â€ ÃÂ¸Ã‘Â Ã‘ÂÃÂ¾ÃÂ·ÃÂ´ÃÂ°ÃÂ½ÃÂ¸Ã‘Â ÃÂ¿ÃÂ¾ÃÂ´Ã‘ÂÃÂ²ÃÂµÃ‘â€šÃÂºÃÂ¸ ÃÂ´ÃÂ»Ã‘Â GunDrop
 local function createGunDropHighlight(gunDrop)
     if gunDropESPEnabled and gunDrop and not gunDrop:FindFirstChild("GunDropHighlight") then
         local highlight = Instance.new("Highlight")
         highlight.Name = "GunDropHighlight"
-        highlight.FillColor = Color3.fromRGB(255, 215, 0) -- Ãâ€”ÃÂ¾ÃÂ»ÃÂ¾Ã‘â€šÃÂ¾ÃÂ¹ Ã‘â€ ÃÂ²ÃÂµÃ‘â€š
+        highlight.FillColor = Color3.fromRGB(255, 215, 0)
         highlight.OutlineColor = Color3.fromRGB(255, 165, 0)
         highlight.Adornee = gunDrop
         highlight.Parent = gunDrop
     end
 end
 
--- ÃÂ¤Ã‘Æ’ÃÂ½ÃÂºÃ‘â€ ÃÂ¸Ã‘Â ÃÂ¾ÃÂ±ÃÂ½ÃÂ¾ÃÂ²ÃÂ»ÃÂµÃÂ½ÃÂ¸Ã‘Â ESP
 local function updateGunDropESP()
-    -- ÃÂ£ÃÂ´ÃÂ°ÃÂ»Ã‘ÂÃÂµÃÂ¼ Ã‘ÂÃ‘â€šÃÂ°Ã‘â‚¬Ã‘â€¹ÃÂµ ÃÂ¿ÃÂ¾ÃÂ´Ã‘ÂÃÂ²ÃÂµÃ‘â€šÃÂºÃÂ¸
     for _, mapName in pairs(mapPaths) do
         local map = workspace:FindFirstChild(mapName)
         if map then
@@ -423,7 +351,6 @@ local function updateGunDropESP()
         end
     end
 
-    -- ÃÂ¡ÃÂ¾ÃÂ·ÃÂ´ÃÂ°ÃÂµÃÂ¼ ÃÂ½ÃÂ¾ÃÂ²Ã‘â€¹ÃÂµ ÃÂ¿ÃÂ¾ÃÂ´Ã‘ÂÃÂ²ÃÂµÃ‘â€šÃÂºÃÂ¸ ÃÂµÃ‘ÂÃÂ»ÃÂ¸ ESP ÃÂ²ÃÂºÃÂ»Ã‘Å½Ã‘â€¡ÃÂµÃÂ½
     if gunDropESPEnabled then
         for _, mapName in pairs(mapPaths) do
             local map = workspace:FindFirstChild(mapName)
@@ -437,7 +364,6 @@ local function updateGunDropESP()
     end
 end
 
--- ÃÅ“ÃÂ¾ÃÂ½ÃÂ¸Ã‘â€šÃÂ¾Ã‘â‚¬ÃÂ¸ÃÂ½ÃÂ³ ÃÂ¿ÃÂ¾Ã‘ÂÃÂ²ÃÂ»ÃÂµÃÂ½ÃÂ¸Ã‘Â GunDrop ÃÂ½ÃÂ° ÃÂ²Ã‘ÂÃÂµÃ‘â€¦ ÃÂºÃÂ°Ã‘â‚¬Ã‘â€šÃÂ°Ã‘â€¦
 local function monitorGunDrops()
     for _, mapName in pairs(mapPaths) do
         local map = workspace:FindFirstChild(mapName)
@@ -462,10 +388,9 @@ Tabs.EspTab:Toggle({
     end
 })
 
--- ÃÂÃÂ²Ã‘â€šÃÂ¾ÃÂ¼ÃÂ°Ã‘â€šÃÂ¸Ã‘â€¡ÃÂµÃ‘ÂÃÂºÃÂ¾ÃÂµ ÃÂ¾ÃÂ±ÃÂ½ÃÂ¾ÃÂ²ÃÂ»ÃÂµÃÂ½ÃÂ¸ÃÂµ ÃÂ¿Ã‘â‚¬ÃÂ¸ Ã‘ÂÃÂ¼ÃÂµÃÂ½ÃÂµ ÃÂºÃÂ°Ã‘â‚¬Ã‘â€šÃ‘â€¹
 workspace.ChildAdded:Connect(function(child)
     if table.find(mapPaths, child.Name) then
-        task.wait(2) -- Ãâ€“ÃÂ´ÃÂµÃÂ¼ ÃÂ·ÃÂ°ÃÂ³Ã‘â‚¬Ã‘Æ’ÃÂ·ÃÂºÃ‘Æ’ ÃÂºÃÂ°Ã‘â‚¬Ã‘â€šÃ‘â€¹
+        task.wait(2)
         updateGunDropESP()
     end
 end)
@@ -483,12 +408,11 @@ Players.PlayerRemoving:Connect(function(player)
     end
 end)
 
--- === TELEPORT TAB (FIXED & ENGLISH) ===
+-- TELEPORT TAB
 local teleportTarget = nil
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
--- Get list of players (only those with a character)
 local function getPlayerList()
     local playersList = {}
     for _, player in pairs(Players:GetPlayers()) do
@@ -496,16 +420,14 @@ local function getPlayerList()
             table.insert(playersList, player.Name)
         end
     end
-    table.sort(playersList) -- Alphabetical order
+    table.sort(playersList)
     return playersList
 end
 
--- Default TP Section
 Tabs.TeleportTab:Section({ 
     Title = gradient("Default TP", Color3.fromHex("#00448c"), Color3.fromHex("#0affd6"))
 })
 
--- Dropdown with live update
 local teleportDropdown = Tabs.TeleportTab:Dropdown({
     Title = "Players",
     Values = getPlayerList(),
@@ -514,14 +436,12 @@ local teleportDropdown = Tabs.TeleportTab:Dropdown({
     Callback = function(selected)
         if selected and selected ~= "Select Player" then
             teleportTarget = Players:FindFirstChild(selected)
-   
         else
             teleportTarget = nil
         end
     end
 })
 
--- Teleport to selected player
 local function teleportToPlayer()
     if not teleportTarget or not teleportTarget.Character then
         WindUI:Notify({
@@ -537,7 +457,7 @@ local function teleportToPlayer()
     local localRoot = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
 
     if targetRoot and localRoot then
-        localRoot.CFrame = targetRoot.CFrame * CFrame.new(0, 0, -2) -- Teleport behind
+        localRoot.CFrame = targetRoot.CFrame * CFrame.new(0, 0, -2)
         WindUI:Notify({
             Title = "Teleported!",
             Content = "TP to " .. teleportTarget.Name .. " Success",
@@ -577,7 +497,6 @@ Tabs.TeleportTab:Button({
     end
 })
 
--- Auto-refresh every 5 seconds
 coroutine.wrap(function()
     while true do
         task.wait(5)
@@ -588,7 +507,6 @@ coroutine.wrap(function()
     end
 end)()
 
--- Update when player joins/leaves
 Players.PlayerAdded:Connect(function()
     task.wait(1)
     teleportDropdown:Refresh(getPlayerList())
@@ -599,7 +517,6 @@ Players.PlayerRemoving:Connect(function()
     teleportDropdown:Refresh(getPlayerList())
 end)
 
--- === SPECIAL TP SECTION ===
 Tabs.TeleportTab:Section({ 
     Title = gradient("Special TP", Color3.fromHex("#b914fa"), Color3.fromHex("#7023c2"))
 })
@@ -803,7 +720,6 @@ local SilentAim = {
     Prediction = 0.14
 }
 
--- ÃÅ¸ÃÂ¾ÃÂ»Ã‘Æ’Ã‘â€¡ÃÂ°ÃÂµÃÂ¼ Ã‘Æ’ÃÂ±ÃÂ¸ÃÂ¹Ã‘â€ Ã‘Æ’
 local function GetMurderer()
     local success, roles = pcall(function()
         return game:GetService("ReplicatedStorage"):FindFirstChild("GetPlayerData", true):InvokeServer()
@@ -818,7 +734,6 @@ local function GetMurderer()
     return nil
 end
 
--- ÃÅ¾Ã‘ÂÃÂ½ÃÂ¾ÃÂ²ÃÂ½ÃÂ¾ÃÂ¹ Ã‘â€¦Ã‘Æ’ÃÂº
 local oldNamecall
 oldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
     if SilentAim.Enabled and not checkcaller() then
@@ -838,7 +753,6 @@ oldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
     return oldNamecall(self, ...)
 end)
 
--- ÃÅ¸Ã‘â‚¬ÃÂ¾Ã‘ÂÃ‘â€šÃÂ¾ Ã‘â€šÃÂ¾ÃÂ³ÃÂ³ÃÂ» ÃÂ² UI
 local Toggle = Tabs.AimbotTab:Toggle({
     Title = "Silent Aim",
     Default = false,
@@ -846,7 +760,8 @@ local Toggle = Tabs.AimbotTab:Toggle({
         SilentAim.Enabled = state
     end
 })
--- === AUTOFARM TAB (Halloween Event - Candy Collection) ===
+
+-- AUTOFARM TAB
 Tabs.AutoFarm:Section({ 
     Title = gradient("Candy Collection", Color3.fromHex("#ff8c00"), Color3.fromHex("#ff4500")),
     Icon = "candy" 
@@ -858,10 +773,6 @@ local AutoFarmConfig = {
     AutoFlingMurderer = false,
     Speed = 30
 }
-
---------------------------------------------------------
---  ðŸ”„ NOUVEAU SYSTÃˆME CANDY AUTOFARM (FLY TWEEN)
---------------------------------------------------------
 
 local autofarmActive = false
 local flySpeed = 20
@@ -949,10 +860,6 @@ function _AutoFarm(active)
     end
 end
 
---------------------------------------------------------
---  ðŸ”„ **NOUVEAU AUTO RESET SYSTEM (Ã‰vÃ©nements OFFICIELS)**
---------------------------------------------------------
-
 local autoResetEnabled = false
 local resetting = false
 local bag_full = false
@@ -977,7 +884,6 @@ CoinCollected.OnClientEvent:Connect(function(_, current, max)
 
         local hrp = getHRP()
 
-        -- Retour Ã  la position sauvegardÃ©e
         if start_position then
             local tween = TweenService:Create(
                 hrp,
@@ -990,7 +896,6 @@ CoinCollected.OnClientEvent:Connect(function(_, current, max)
 
         task.wait(0.5)
 
-        -- RESET PLAYER
         local char = player.Character
         if char and char:FindFirstChild("Humanoid") then
             char.Humanoid.Health = 0
@@ -1012,10 +917,6 @@ RoundEnd.OnClientEvent:Connect(function()
     bag_full = false
     resetting = false
 end)
-
---------------------------------------------------------
---  AUTO FLING MURDERER
---------------------------------------------------------
 
 local function flingMurderer()
     if not AutoFarmConfig.AutoFlingMurderer then return end
@@ -1043,11 +944,6 @@ local function flingMurderer()
     end
 end
 
---------------------------------------------------------
---  UI TOGGLES
---------------------------------------------------------
-
--- Candy Autofarm
 Tabs.AutoFarm:Toggle({
     Title = gradient("Candy Autofarm", Color3.fromHex("#ff8c00"), Color3.fromHex("#ff4500")),
     Default = false,
@@ -1058,7 +954,6 @@ Tabs.AutoFarm:Toggle({
     end
 })
 
--- Auto Reset (nouveau systÃ¨me)
 Tabs.AutoFarm:Toggle({
     Title = gradient("Auto Reset Character", Color3.fromHex("#00bfff"), Color3.fromHex("#1e90ff")),
     Default = false,
@@ -1069,7 +964,6 @@ Tabs.AutoFarm:Toggle({
     end
 })
 
--- Auto Fling Murderer
 Tabs.AutoFarm:Toggle({
     Title = gradient("Auto Fling Murderer", Color3.fromHex("#ff4500"), Color3.fromHex("#dc143c")),
     Default = false,
@@ -1087,7 +981,6 @@ Tabs.AutoFarm:Toggle({
     end
 })
 
--- Autofarm Speed Slider
 Tabs.AutoFarm:Slider({
     Title = gradient("Autofarm Speed", Color3.fromHex("#00ff7f"), Color3.fromHex("#32cd32")),
     Value = { Min = 10, Max = 100, Default = 30 },
@@ -1098,10 +991,6 @@ Tabs.AutoFarm:Slider({
     end
 })
 
---------------------------------------------------------
---  HEARTBEAT SPEED (WalkSpeed Sync)
---------------------------------------------------------
-
 RunService.Heartbeat:Connect(function()
     if AutoFarmConfig.CandyAutofarm and LocalPlayer.Character then
         LocalPlayer.Character.Humanoid.WalkSpeed = AutoFarmConfig.Speed
@@ -1111,11 +1000,9 @@ RunService.Heartbeat:Connect(function()
         end
     end
 end)
--- ========================================
--- === INNOCENT TAB + FONCTIONS (tout ensemble) ===
--- ========================================
+
+-- INNOCENT TAB
 do
-	-- === FONCTIONS INNOCENT (placÃ©es juste avant le Tab) ===
 	local gunDropESPEnabled = true
 	local notifiedGunDrops = {}
 	local mapGunDrops = {
@@ -1131,7 +1018,6 @@ do
 		GunDropHighlights = {}
 	}
 
-	-- Scanner les GunDrops
 	local function ScanForGunDrops()
 		GunSystem.ActiveGunDrops = {}
 		for _, mapName in ipairs(mapGunDrops) do
@@ -1144,7 +1030,6 @@ do
 		if rootGunDrop then table.insert(GunSystem.ActiveGunDrops, rootGunDrop) end
 	end
 
-	-- Prendre le pistolet
 	local function GrabGun(gunDrop)
 		if not gunDrop then
 			ScanForGunDrops()
@@ -1179,7 +1064,6 @@ do
 		return false
 	end
 
-	-- Auto Grab
 	local function AutoGrabGun()
 		while GunSystem.AutoGrabEnabled do
 			ScanForGunDrops()
@@ -1203,11 +1087,10 @@ do
 		end
 	end
 
-	-- Prendre + Tirer sur le Murderer
 	local function GrabAndShootMurderer()
 		if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Gun") then else
 			if not GrabGun() then
-				WindUI:Notify({Title = "Gun System", Content = "Ã‰chec prise de pistolet", Icon = "x-circle", Duration = 3})
+				WindUI:Notify({Title = "Gun System", Content = "Échec prise de pistolet", Icon = "x-circle", Duration = 3})
 				return
 			end
 			task.wait(0.1)
@@ -1217,7 +1100,7 @@ do
 		if gun then gun.Parent = LocalPlayer.Character end
 		gun = LocalPlayer.Character:FindFirstChild("Gun")
 		if not gun then
-			WindUI:Notify({Title = "Gun System", Content = "Pistolet non Ã©quipÃ©", Icon = "x-circle", Duration = 3})
+			WindUI:Notify({Title = "Gun System", Content = "Pistolet non équipé", Icon = "x-circle", Duration = 3})
 			return
 		end
 
@@ -1227,7 +1110,7 @@ do
 			if data.Role == "Murderer" then murdererName = name; break end
 		end
 		if not murdererName then
-			WindUI:Notify({Title = "Gun System", Content = "Murderer non trouvÃ©", Icon = "x-circle", Duration = 3})
+			WindUI:Notify({Title = "Gun System", Content = "Murderer non trouvé", Icon = "x-circle", Duration = 3})
 			return
 		end
 
@@ -1248,7 +1131,6 @@ do
 		end
 	end
 
-	-- Notification GunDrop
 	local function checkForGunDrops()
 		for _, mapName in ipairs(mapGunDrops) do
 			local map = workspace:FindFirstChild(mapName)
@@ -1264,7 +1146,6 @@ do
 		end
 	end
 
-	-- Suivi des GunDrops
 	for _, mapName in ipairs(mapGunDrops) do
 		local map = workspace:FindFirstChild(mapName)
 		if map then
@@ -1288,7 +1169,6 @@ do
 		end
 	end)
 
-	-- === ONGLETS INNOCENT (aprÃ¨s les fonctions) ===
 	Tabs.InnocentTab:Toggle({
 		Title = "Notify GunDrop",
 		Default = true,
@@ -1311,7 +1191,6 @@ do
 
 	Tabs.InnocentTab:Button({ Title = "Grab Gun & Shoot Murderer", Callback = GrabAndShootMurderer })
 
-	-- Init
 	task.spawn(function()
 		if not LocalPlayer.Character then LocalPlayer.CharacterAdded:Wait() end
 		ScanForGunDrops()
@@ -1319,11 +1198,8 @@ do
 	end)
 end
 
--- ========================================
--- === MURDER TAB + FONCTIONS (tout ensemble) ===
--- ========================================
+-- MURDER TAB
 do
-	-- === FONCTIONS MURDER ===
 	local killActive = false
 	local attackDelay = 0.5
 	local targetRoles = {"Sheriff", "Hero", "Innocent"}
@@ -1384,7 +1260,7 @@ do
 	local function killTargets()
 		if killActive then return end
 		killActive = true
-		WindUI:Notify({Title = "Kill", Content = "Attaque lancÃ©e...", Icon = "alert-circle", Duration = 2})
+		WindUI:Notify({Title = "Kill", Content = "Attaque lancée...", Icon = "alert-circle", Duration = 2})
 
 		task.spawn(function()
 			while killActive do
@@ -1404,10 +1280,9 @@ do
 
 	local function stopKilling()
 		killActive = false
-		WindUI:Notify({Title = "Kill", Content = "Attaque arrÃªtÃ©e", Icon = "x-circle", Duration = 2})
+		WindUI:Notify({Title = "Kill", Content = "Attaque arrêtée", Icon = "x-circle", Duration = 2})
 	end
 
-	-- === ONGLETS MURDER ===
 	Tabs.MurderTab:Section({ Title = gradient("Kill Functions", Color3.fromHex("#e80909"), Color3.fromHex("#630404")) })
 
 	Tabs.MurderTab:Toggle({
@@ -1432,7 +1307,7 @@ do
 		Title = "Equip Knife",
 		Callback = function()
 			if equipKnife() then
-				WindUI:Notify({Title = "Knife", Content = "Ã‰quipÃ© !", Icon = "check-circle", Duration = 2})
+				WindUI:Notify({Title = "Knife", Content = "Équipé !", Icon = "check-circle", Duration = 2})
 			else
 				WindUI:Notify({Title = "Knife", Content = "Introuvable", Icon = "x-circle", Duration = 2})
 			end
@@ -1440,11 +1315,8 @@ do
 	})
 end
 
--- ========================================
--- === SHERIFF TAB + FONCTIONS (tout ensemble) ===
--- ========================================
+-- SHERIFF TAB
 do
-	-- === FONCTIONS SHERIFF ===
 	local shotType = "Default"
 	local shotButton = nil
 	local shotButtonFrame = nil
@@ -1543,7 +1415,6 @@ do
 			ShootMurderer()
 		end)
 
-		-- Drag
 		local dragStart, startPos
 		shotButton.InputBegan:Connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -1563,7 +1434,7 @@ do
 		end)
 
 		shotButtonActive = true
-		WindUI:Notify({Title = "Sheriff", Content = "Bouton de tir activÃ©", Icon = "check-circle", Duration = 3})
+		WindUI:Notify({Title = "Sheriff", Content = "Bouton de tir activé", Icon = "check-circle", Duration = 3})
 	end
 
 	local function RemoveShotButton()
@@ -1574,10 +1445,9 @@ do
 		end
 		shotButton, shotButtonFrame = nil, nil
 		shotButtonActive = false
-		WindUI:Notify({Title = "Sheriff", Content = "Bouton dÃ©sactivÃ©", Icon = "x-circle", Duration = 3})
+		WindUI:Notify({Title = "Sheriff", Content = "Bouton désactivé", Icon = "x-circle", Duration = 3})
 	end
 
-	-- === ONGLETS SHERIFF ===
 	Tabs.SheriffTab:Section({ Title = gradient("Shot functions", Color3.fromHex("#001e80"), Color3.fromHex("#16f2d9")) })
 
 	Tabs.SheriffTab:Dropdown({
@@ -1617,6 +1487,7 @@ do
 		end
 	})
 end
+
 -- Settings
 local Settings = {
     Hitbox = {
@@ -1743,7 +1614,6 @@ Tabs.SettingsTab:Section({
     Title = gradient("Character Functions", Color3.fromHex("#00eaff"), Color3.fromHex("#002a2e"))
 })
 
-
 Tabs.SettingsTab:Toggle({
     Title = "Anti-AFK",
     Callback = function(state)
@@ -1759,8 +1629,6 @@ Tabs.SettingsTab:Toggle({
         ToggleNoclip(state)
     end
 })
-
--- Auto Exec
 
 Tabs.SettingsTab:Section({
     Title = gradient("Auto Execute", Color3.fromHex("#00ff40"), Color3.fromHex("#88f2a2"))
@@ -1877,13 +1745,13 @@ Tabs.ChangelogsTab:Code({
     Title = "Changelogs:",
     Code = [[
     Early release [Beta]:
-    Ã¢â‚¬Â¢ Script has been released
-    Ã¢â‚¬Â¢ Shoot murder function
-    Ã¢â‚¬Â¢ Silent aimbot
-    Ã¢â‚¬Â¢ Special aimbot
-    Ã¢â‚¬Â¢ Kill neariest player
-    Ã¢â‚¬Â¢ TP to murder/sheriff function
-    Ã¢â‚¬Â¢ Esp all: murderer, sheriff, innocent
+    • Script has been released
+    • Shoot murder function
+    • Silent aimbot
+    • Special aimbot
+    • Kill neariest player
+    • TP to murder/sheriff function
+    • Esp all: murderer, sheriff, innocent
    More functions will be added in future!
 ]]
 })
@@ -1892,12 +1760,12 @@ Tabs.ChangelogsTab:Code({
     Title = "Next update:",
     Code = [[ The next update is Alpha [0.1.1]
     In future we will be add:
-    Ã¢â‚¬Â¢ Autofarm coins function
-    Ã¢â‚¬Â¢ Autofarm coins variables
-    Ã¢â‚¬Â¢ Kill all function
-    Ã¢â‚¬Â¢ TP to Lobby
-    Ã¢â‚¬Â¢ Kill sheriff function
-    Ã¢â‚¬Â¢ Fix bugs
+    • Autofarm coins function
+    • Autofarm coins variables
+    • Kill all function
+    • TP to Lobby
+    • Kill sheriff function
+    • Fix bugs
    The date of update: 17.11.2025!
 ]]
 })
