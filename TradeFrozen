@@ -1716,10 +1716,18 @@ Tabs.SocialsTab:Paragraph({
     Image = "bird",
     Color = "White",
     Buttons = {
-        { Icon = "circle",
-          Title = "our discord",
-          Callback = function()
-              SetClipboard("https://discord.gg/j6rPU57tBk") end,
+        { 
+            Icon = "circle",
+            Title = "our discord",
+            Callback = function()
+                setclipboard("https://discord.gg/j6rPU57tBk")
+                WindUI:Notify({
+                    Title = "Discord Link",
+                    Content = "Server invite copied to clipboard!",
+                    Icon = "check-circle",
+                    Duration = 3
+                })
+            end
         }
     }
 })
@@ -1731,12 +1739,7 @@ Tabs.ChangelogsTab:Code({
     Code = [[
     Early release [Beta]:
     • Script has been released
-    • Shoot murder function
-    • Silent aimbot
-    • Special aimbot
-    • Kill neariest player
-    • TP to murder/sheriff function
-    • Esp all: murderer, sheriff, innocent
+
    More functions will be added in future!
 ]]
 })
@@ -1745,13 +1748,8 @@ Tabs.ChangelogsTab:Code({
     Title = "Next update:",
     Code = [[ The next update is Alpha [0.1.1]
     In future we will be add:
-    • Autofarm coins function
-    • Autofarm coins variables
-    • Kill all function
-    • TP to Lobby
-    • Kill sheriff function
-    • Fix bugs
-   The date of update: 17.11.2025!
+    • fix bugs
+   The date of update: 17.1.2026!
 ]]
 })
 
